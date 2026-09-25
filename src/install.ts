@@ -29,7 +29,7 @@ function readVersion(): string {
 }
 
 function printHelp(): void {
-  console.log("Uso: npx @capitanfeeder/guardrail [opciones]");
+  console.log("Uso: npx @ogsosa/guardrail [opciones]");
   console.log("");
   console.log("Instala el AGENTS.md corporativo en la carpeta de configuracion de Codex CLI");
   console.log("(C:\\Users\\<usuario>\\.codex\\AGENTS.md).");
@@ -42,7 +42,7 @@ function printHelp(): void {
 }
 
 function report(result: DeployResult, ok: boolean, override: boolean): void {
-  console.log("Guardrail @capitanfeeder/guardrail");
+  console.log("Guardrail @ogsosa/guardrail");
   console.log(result.created
     ? `AGENTS.md creado en ${result.agentsFile}`
     : `AGENTS.md actualizado en ${result.agentsFile}`);
