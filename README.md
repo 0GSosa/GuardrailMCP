@@ -1,4 +1,4 @@
-# @capitanfeeder/guardrail
+# @ogsosa/guardrail
 
 Instalador del guardrail corporativo para Codex CLI. En esta primera versión, el comando de
 instalación coloca el archivo `AGENTS.md` con las directivas corporativas en la carpeta de
@@ -7,9 +7,9 @@ en macOS y Linux).
 
 ## Cómo funciona la instalación con un solo comando
 
-El paquete se publica en un registry npm (GitHub Packages o GitLab Package Registry). La magia
+El paquete se publica en un registry npm (npmjs o el registry interno de la empresa). La magia
 del "un solo comando" es el campo `bin` del `package.json`: define qué script se ejecuta cuando
-alguien corre `npx @capitanfeeder/guardrail`. El flujo es:
+alguien corre `npx @ogsosa/guardrail`. El flujo es:
 
 1. `npx` descarga el paquete desde el registry (no deja nada instalado en la máquina).
 2. Node ejecuta el comando `guardrail` declarado en `bin` (es el archivo `dist/install.js`).
@@ -32,18 +32,18 @@ Codex apunte a él y el comando esté disponible.
 
 El mismo comando sirve en los tres sistemas:
 
-    npx @capitanfeeder/guardrail
+    npx @ogsosa/guardrail
 
 Versión fija (recomendable para despliegues controlados):
 
-    npx @capitanfeeder/guardrail@0.1.0
+    npx @ogsosa/guardrail@0.1.0
 
 ### Opción 2: script de instalación por sistema operativo
 
 Windows (PowerShell):
 
     # 1. Descargar el instalador
-    Invoke-WebRequest -Uri https://raw.githubusercontent.com/capitanfeeder/GuardrailMCP/master/scripts/install.ps1 -OutFile install.ps1
+    Invoke-WebRequest -Uri https://raw.githubusercontent.com/0GSosa/GuardrailMCP/master/scripts/install.ps1 -OutFile install.ps1
 
     # 2. (Opcional pero recomendado) Revisar el script
     notepad install.ps1
@@ -57,7 +57,7 @@ Windows (PowerShell):
 macOS / Linux (bash):
 
     # 1. Descargar el instalador
-    curl -fsSL https://raw.githubusercontent.com/capitanfeeder/GuardrailMCP/master/scripts/install.sh -o install.sh
+    curl -fsSL https://raw.githubusercontent.com/0GSosa/GuardrailMCP/master/scripts/install.sh -o install.sh
 
     # 2. (Opcional pero recomendado) Revisar el script
     less install.sh
@@ -81,7 +81,7 @@ Los scripts no requieren Node.js: descargan el template de directivas y lo coloc
 
 ## Verificación
 
-    npx @capitanfeeder/guardrail --dry-run
+    npx @ogsosa/guardrail --dry-run
 
 Y tras instalar, confirmar que Codex ve las directivas:
 
@@ -109,7 +109,7 @@ La respuesta debe citar las directivas corporativas del `AGENTS.md`.
 
 ## Publicación
 
-El repo vive en https://github.com/capitanfeeder/GuardrailMCP (rama `master`) y se puede validar
+El repo vive en https://github.com/0GSosa/GuardrailMCP (rama `master`) y se puede validar
 con `node dist/install.js` o `npm pack` sin publicar. Para publicar:
 
 ### npmjs.com (lo que habilita `npx` sin configuración previa)
@@ -124,10 +124,11 @@ tarball siempre incluye `dist/`. Si se quiere saltar esa garantía, compilar ant
 
 ### Otras opciones:
 
-- GitHub Packages: el scope `@capitanfeeder` coincide con el usuario de GitHub, así que el nombre
-  del paquete queda válido. Requiere un `.npmrc` con token hacia `npm.pkg.github.com`.
-- GitLab Package Registry (destino final en la empresa): el pipeline publica el paquete y el
-  comando pasa a correr contra el registry de GitLab, adaptando el nombre al scope interno.
+- GitHub Packages: requiere un `.npmrc` con token hacia `npm.pkg.github.com` y que el scope del
+  paquete coincida con el usuario u organización que publica, así que exigiría renombrar el
+  paquete. npmjs no tiene esa restricción.
+- Registry interno de la empresa (GitHub de la empresa): el pipeline puede publicar el paquete
+  en el registry que se defina, adaptando el nombre al scope interno.
 
 ## Próximas versiones
 

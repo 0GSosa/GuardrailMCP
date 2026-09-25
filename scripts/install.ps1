@@ -4,7 +4,7 @@
 
 $ErrorActionPreference = "Stop"
 
-$RepoRawBase = "https://raw.githubusercontent.com/capitanfeeder/GuardrailMCP/master"
+$RepoRawBase = "https://raw.githubusercontent.com/0GSosa/GuardrailMCP/master"
 $TemplateUrl = "$RepoRawBase/templates/AGENTS.md"
 
 $CodexDir = Join-Path $HOME ".codex"

@@ -4,7 +4,7 @@
 # No requiere Node.js: descarga el template directamente desde el repositorio.
 set -euo pipefail
 
-REPO_RAW_BASE="https://raw.githubusercontent.com/capitanfeeder/GuardrailMCP/master"
+REPO_RAW_BASE="https://raw.githubusercontent.com/0GSosa/GuardrailMCP/master"
 TEMPLATE_URL="$REPO_RAW_BASE/templates/AGENTS.md"
 
 CODEX_DIR="$HOME/.codex"
