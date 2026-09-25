@@ -1,4 +1,4 @@
-# Guardrail @capitanfeeder/guardrail - instalador para Windows (PowerShell)
+# Guardrail @ogsosa/guardrail - instalador para Windows (PowerShell)
 # Coloca el AGENTS.md corporativo en C:\Users\<usuario>\.codex\AGENTS.md
 # No requiere Node.js: descarga el template directamente desde el repositorio.
 
