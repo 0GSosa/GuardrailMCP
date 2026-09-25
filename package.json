@@ -1,0 +1,31 @@
+{
+  "name": "@capitanfeeder/guardrail",
+  "version": "0.1.0",
+  "description": "Instalador del guardrail corporativo para Codex CLI. Coloca el AGENTS.md en ~/.codex.",
+  "license": "UNLICENSED",
+  "bin": {
+    "guardrail": "dist/install.js"
+  },
+  "files": [
+    "dist",
+    "templates",
+    "scripts"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node --test",
+    "prepublishOnly": "npm test",
+    "guardrail": "node dist/install.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capitanfeeder/GuardrailMCP.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}
