@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Guardrail @capitanfeeder/guardrail - instalador para macOS / Linux
+# Guardrail @ogsosa/guardrail - instalador para macOS / Linux
 # Coloca el AGENTS.md corporativo en ~/.codex/AGENTS.md
 # No requiere Node.js: descarga el template directamente desde el repositorio.
 set -euo pipefail
